@@ -19,7 +19,6 @@ class ChatBloc extends Bloc<ChatEvent, ChatState> {
       try {
         _chat.sendmassage(event.ids, event.msg);
         emit(ChatSendState());
-    
       } catch (e) {
         print(e.toString());
         emit(ChatErorrSendState(e.toString()));

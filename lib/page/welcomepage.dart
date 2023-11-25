@@ -13,7 +13,7 @@ class _WelcomepageState extends State<Welcomepage> {
   @override
   Widget build(BuildContext context) {
     var heignt = MediaQuery.of(context).size.height;
-    var width = MediaQuery.of(context).size.width;
+    // var width = MediaQuery.of(context).size.width;
     bool light = Theme.of(context).brightness == Brightness.light;
     return Scaffold(
       body: SafeArea(

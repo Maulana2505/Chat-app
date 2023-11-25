@@ -3,7 +3,7 @@ import 'package:chat_app/bloc/chat/chat_bloc.dart';
 import 'package:chat_app/bloc/chat/chat_event.dart';
 import 'package:chat_app/bloc/chat/chat_state.dart';
 import 'package:chat_app/model/chat/chat_model.dart';
-import 'package:chat_app/model/search/search_model.dart';
+
 import 'package:chat_app/widget/costumCardChat.dart';
 import 'package:chat_app/widget/costumCardChatFriend.dart';
 import 'package:flutter/material.dart';
@@ -76,7 +76,7 @@ class _ChatPageState extends State<ChatPage> {
         body: SafeArea(
           child: BlocListener<ChatBloc, ChatState>(
             listener: (context, state) {
-                context.read<ChatBloc>()..add(ChatLoadDataEvent());
+                context.watch<ChatBloc>()..add(ChatLoadDataEvent());
             },
             child: BlocBuilder<ChatBloc, ChatState>(
               builder: (context, state) {
@@ -159,7 +159,6 @@ class _ChatPageState extends State<ChatPage> {
                                                   "${widget.datafid.toString()}",
                                                   _massage.text,
                                                   context);
-
                                               print(a.toString());
                                               _massage.clear();
                                               _Scroll();
@@ -177,22 +176,6 @@ class _ChatPageState extends State<ChatPage> {
                     ),
                   ],
                 );
-                // );
-                // }
-                // if (state is ChatErorrState) {
-                //   return Center(
-                //     child: Text(
-                //       state.msg,
-                //       style: TextStyle(fontWeight: FontWeight.bold),
-                //     ),
-                //   );
-                // }
-                // // return _Scroll();
-                // return Center(
-                //   child: CircularProgressIndicator(
-                //     color: Get.isDarkMode ? Colors.white : Colors.black,
-                //   ),
-                // );
               },
             ),
           ),

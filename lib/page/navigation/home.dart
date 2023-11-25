@@ -3,10 +3,9 @@ import 'package:chat_app/bloc/chat/chat_state.dart';
 import 'package:chat_app/page/chat.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:get/get.dart';
+
 
 import '../../bloc/chat/chat_event.dart';
-import '../../model/chat/chat_model.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);

@@ -7,10 +7,7 @@ import 'package:chat_app/bloc/signin/signin_state.dart';
 import 'package:chat_app/widget/Navigation/nav.dart';
 import 'package:get/get.dart';
 
-import '../bloc/friendRequest/friendreq_bloc.dart';
-import '../bloc/friendRequest/friendreq_event.dart';
-import '../bloc/pending/pending_bloc.dart';
-import '../bloc/pending/pending_event.dart';
+
 import '../bloc/signin/signin_bloc.dart';
 
 class Signin extends StatefulWidget {
