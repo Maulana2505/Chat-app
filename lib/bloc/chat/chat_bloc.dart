@@ -2,7 +2,6 @@ import 'package:bloc/bloc.dart';
 import 'package:chat_app/api/chat.dart';
 import 'package:chat_app/bloc/chat/chat_event.dart';
 import 'package:chat_app/bloc/chat/chat_state.dart';
-import 'package:chat_app/model/chat/chat_model.dart';
 
 class ChatBloc extends Bloc<ChatEvent, ChatState> {
   final _chat = ChatApi();

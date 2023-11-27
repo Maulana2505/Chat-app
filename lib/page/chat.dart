@@ -1,3 +1,4 @@
+
 import 'package:chat_app/api/socket.dart';
 import 'package:chat_app/bloc/chat/chat_bloc.dart';
 import 'package:chat_app/bloc/chat/chat_event.dart';
@@ -31,14 +32,14 @@ class _ChatPageState extends State<ChatPage> {
   @override
   void initState() {
     socket().connect();
-    context.read<ChatBloc>().add(ChatLoadDataEvent());
+    // context.read<ChatBloc>().add(ChatLoadDataEvent());
 
     super.initState();
   }
 
   void _Scroll() {
     _scrollController.animateTo(_scrollController.position.maxScrollExtent,
-        duration: Duration(milliseconds: 100), curve: Curves.easeOut);
+        duration: Duration(milliseconds: 300), curve: Curves.easeOut);
   }
 
   @override
@@ -76,7 +77,8 @@ class _ChatPageState extends State<ChatPage> {
         body: SafeArea(
           child: BlocListener<ChatBloc, ChatState>(
             listener: (context, state) {
-                context.watch<ChatBloc>()..add(ChatLoadDataEvent());
+              // ChatApi().getchat();
+                context.read<ChatBloc>().add(ChatLoadDataEvent());
             },
             child: BlocBuilder<ChatBloc, ChatState>(
               builder: (context, state) {
@@ -161,7 +163,7 @@ class _ChatPageState extends State<ChatPage> {
                                                   context);
                                               print(a.toString());
                                               _massage.clear();
-                                              _Scroll();
+                                              // _Scroll();
                                             // }
                                             
                                           },

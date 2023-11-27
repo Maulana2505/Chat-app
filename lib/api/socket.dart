@@ -44,6 +44,7 @@ class socket {
       ..add(ChatSendEvent(ids: recieverID, msg: massage));
     sockets.emit("messages",
         {"id": tokens, "recieverid": recieverID, "massage": massage});
+    // sockets.emit("messages", {'data' : jsonEncode(data.state)});
   }
 
   void StatusUsers() async {
